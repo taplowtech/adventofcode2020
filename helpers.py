@@ -12,3 +12,21 @@ def read_file_as_array_str(filename):
     for f in f.readlines():
         res.append(f.replace('\n', ''))
     return res
+
+def validate_year(i, min, max):
+    try:
+        year = int(i)
+        if (year >= min) and (year <= max):
+            return True
+    except:
+        return False
+    return False
+
+
+def validate_chars(i, valid, vlen):
+    if len(i) != vlen:
+        return False
+    for c in i:
+        if c not in valid:
+            return False
+    return True
